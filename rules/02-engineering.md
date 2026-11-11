@@ -1,6 +1,6 @@
 # 02 — Engineering Standards
 
-**Applies to:** all web projects. Design values live in DabDesign; this document covers code.
+**Applies to:** all web projects. Design values live in `DabDesign/GUIDELINE.md`; this document covers code.
 
 ## 1. Stack selection
 
@@ -14,6 +14,8 @@ Choose by project type. Do not mix stacks within one project.
 | Mobile / native | Expo + React Native | Only when native capabilities are required |
 
 A new framework, rendering model, or styling system requires an ADR and the user's approval. Existing projects keep their current stack until deliberately migrated.
+
+UI work also requires `DabDesign/GUIDELINE.md`; typography and font loading require `DabFonts/GUIDELINE.md`.
 
 ## 2. Runtime and packages
 
@@ -100,12 +102,14 @@ src/styles/               tokens and global CSS
 
 ## 6. Styling
 
+- Follow `DabDesign/GUIDELINE.md` for token roles, typography, space, shape, layout, and icon rules.
 - Tailwind CSS v4 with DabDesign tokens exposed as CSS variables.
+- Use semantic roles (`color-text-primary`, `type-body`), never primitive ramps (`gray-900`, `blue-600`), and never raw hex, px, or ms values where a token exists.
 - Use the project's `cn()` helper (`clsx` + `tailwind-merge`) for conditional classes.
-- No arbitrary values (`w-[437px]`, `text-[#123456]`) unless no token exists; if repeated, add a token to DabDesign.
+- No arbitrary values (`w-[437px]`, `text-[#123456]`) unless no token exists; if repeated, propose a token through DabDesign's decision process.
 - No inline styles except computed values (positions, transforms from measurements).
 - No second styling system (CSS modules, styled-components, MUI) in a Tailwind project.
-- Mobile-first. Use the design system's breakpoints, not ad-hoc media queries.
+- Mobile-first. Use the breakpoints in `DabDesign/GUIDELINE.md`, not ad-hoc media queries.
 - Dark mode comes from theme tokens, not per-component overrides.
 - Global CSS is limited to tokens, resets, and base element styles.
 - Respect `prefers-reduced-motion`; animation is functional, not decorative.
@@ -115,7 +119,7 @@ src/styles/               tokens and global CSS
 - Props are typed and minimal. No prop drilling beyond two levels; use composition or context instead.
 - Handle loading, empty, error, and disabled states explicitly.
 - Accessibility is part of the component: labels, roles, focus management, keyboard behavior.
-- Follow the component contracts in DabDesign (`button`, `dialog`, `text-input`, `select`, `checkbox-radio-switch`, `card`).
+- Follow `DabDesign/GUIDELINE.md` §9 for component status. The v1 pilot set is Button, Text input, and Card; do not treat `components/` or previews as the current contract.
 - Prefer server components; move interactivity into small client leaves.
 
 ## 8. Data, state, and APIs
@@ -146,7 +150,7 @@ src/styles/               tokens and global CSS
 - Prefer static rendering or server rendering; hydrate only interactive parts.
 - Lazy-load heavy client code and below-the-fold widgets.
 - Optimize images (`next/image`, Astro assets), set dimensions, and serve modern formats.
-- Self-host fonts, use `font-display: swap`, and preload only critical files.
+- Follow `DabFonts/GUIDELINE.md` for font files, `@font-face`, weights, fallbacks, and typesetting. Self-host fonts, use `font-display: swap`, and preload only critical files.
 - Check bundle impact before adding a client dependency.
 - No blocking third-party scripts; load analytics after interaction or with `defer`.
 

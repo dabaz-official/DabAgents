@@ -5,7 +5,8 @@
 ## 1. Before you start
 
 - Read the project's `AGENTS.md`, `README.md`, `package.json`, and the files you will change.
-- For any UI work, read the DabDesign tokens and the relevant component document first.
+- For any UI work, start at `DabDesign/GUIDELINE.md` and follow the read order it defines (`core.md`, `GOVERNANCE.md`).
+- For typography, punctuation, or font loading, start at `DabFonts/GUIDELINE.md` and follow the read order it defines (`TYPESETTING.md`).
 - Inspect the repository state before assuming anything. Never invent file contents, APIs, or scripts.
 - Restate the task in one sentence and outline the plan (3–6 steps). For non-trivial work, keep a todo list.
 - If the repository contradicts the request, stop and ask instead of guessing.
@@ -42,13 +43,13 @@ When you decide, state the assumption in the final report.
 - Run the project's gates before claiming completion (rule 04).
 - Report the exact commands run and their outcome. If a check fails or was skipped, say so with the output.
 - Never claim "done", "fixed", or "passing" when typecheck, tests, or build have not run.
-- For UI work, verify the rendered result at mobile and desktop widths and check the console.
+- For UI work, verify the rendered result at every width in `DabDesign/GUIDELINE.md` and check the console.
 - If the same error persists after two focused attempts, stop and explain what you tried.
 
 ## 5. Design fidelity
 
-- Use DabDesign tokens, classes, and component contracts. No hardcoded colors, fonts, spacing, radii, or shadows.
-- Use fonts from DabFonts or the project's pinned vendored copies. Do not download fonts ad hoc.
+- Follow `DabDesign/GUIDELINE.md`: semantic token roles only, no primitive ramps, no raw values, no local scales or component forks.
+- Follow `DabFonts/GUIDELINE.md` for font files, weights, loading, punctuation, and mixed-script spacing. Do not download fonts ad hoc.
 - Preserve contrast, focus visibility, and motion rules from the design system.
 - Match existing patterns in the project before inventing a new one.
 

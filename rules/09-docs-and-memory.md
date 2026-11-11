@@ -34,12 +34,12 @@ One sentence describing what this is and who it is for.
 
 - Put the fastest path to a running app near the top.
 - Keep commands copy-pasteable and current.
-- Link to `AGENTS.md` and the design system instead of duplicating them.
+- Link to `AGENTS.md` and `DabDesign/GUIDELINE.md` instead of duplicating them.
 
 ## 3. AGENTS.md
 
 - Keep it to one page.
-- Pin the versions of DabAgent-Guideline, DabDesign, and DabFonts (tag or commit SHA).
+- Pin the versions of DabAgent-Guideline, DabDesign, and DabFonts (tag or commit SHA), and point to each dependency's `GUIDELINE.md` as its entry point.
 - List the canonical commands and the Definition of Done.
 - State the primary locale, the deploy target, and any project-specific rules.
 - Record exceptions with a reason and review date.
@@ -73,7 +73,7 @@ Format: `docs/adr/NNNN-short-title.md`
 
 - ADRs are immutable. Supersede with a new record instead of editing history.
 - Link the ADR from the PR that implements it.
-- Design decisions belong in DabDesign's governance, not in project ADRs.
+- Design decisions belong in `DabDesign/GUIDELINE.md` and its governance, not in project ADRs.
 
 ## 5. Changelog
 
@@ -101,7 +101,7 @@ Format: `docs/adr/NNNN-short-title.md`
 
 ## 8. Decision memory
 
-- Record decisions in an ADR or in DabDesign's governance, not in chat history.
+- Record decisions in an ADR or in `DabDesign/GUIDELINE.md` / its governance, not in chat history.
 - Read recent ADRs before proposing architecture.
 - If a rule is repeatedly waived, amend the rule instead of accumulating exceptions.
 - The project's `AGENTS.md` is the entry point; keep it accurate or agents will follow stale instructions.

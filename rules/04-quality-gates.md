@@ -76,7 +76,8 @@ jobs:
 
 ## 4. Visual and UX gate
 
-- Check widths: 375, 768, 1440. Also confirm no horizontal scroll at 320.
+- Check every width in `DabDesign/GUIDELINE.md` §7 (currently 375, 390, 640, 768, 1024, 1280, 1536). Also confirm no horizontal scroll at 320.
+- Use semantic token roles only; no primitive ramps, raw values, local scales, or component forks.
 - Check light and dark mode when the project supports both.
 - Walk the page with the keyboard: tab order, visible focus, no traps.
 - Zoom to 200% and confirm the layout remains usable.
@@ -91,7 +92,7 @@ Target WCAG 2.2 AA.
 - No serious or critical axe violations.
 - Every input has a label; every image has appropriate `alt`.
 - Every icon-only button has an accessible name.
-- Contrast follows DabDesign's measured pairs.
+- Contrast follows `DabDesign/GUIDELINE.md` and the measured pairs in `core.md` or the project theme.
 - Headings are semantic and ordered; landmarks are present.
 - `prefers-reduced-motion` is respected.
 - No keyboard trap; dialogs restore focus on close.
@@ -125,7 +126,7 @@ Project-specific exceptions go in `AGENTS.md` with a reason and review date. Do 
 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
-- [ ] Responsive and state checks pass
+- [ ] Responsive at every width in `DabDesign/GUIDELINE.md` and state checks pass
 - [ ] Accessibility gate passes
 - [ ] Performance gate passes or has a recorded exception
 - [ ] No console or server errors

@@ -14,8 +14,8 @@
 ## 2. Responsive rules
 
 - Mobile-first. Minimum supported width: 360 px.
-- Use the breakpoints defined in DabDesign; no ad-hoc media queries.
-- Test at 375, 768, 1024, and 1440 px.
+- Use the breakpoints in `DabDesign/GUIDELINE.md` §7; no ad-hoc media queries.
+- Test every width in `DabDesign/GUIDELINE.md` §7 (currently 375, 390, 640, 768, 1024, 1280, 1536), plus 320 px for overflow.
 - No horizontal scrolling at 320 px or at 200% zoom.
 - Touch targets are at least 44×44 px with adequate spacing.
 - Hover is an enhancement only. Every hover-revealed action must also work on touch and keyboard.

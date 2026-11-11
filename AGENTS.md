@@ -6,7 +6,7 @@ This repository is a **guidelines repository**, not an application. It has no bu
 
 - Write documentation in English. Conversation with the user follows the user's language.
 - Keep rules short, concrete, and checkable. Prefer a command or checklist over an aspiration.
-- Do not duplicate design tokens, font files, or component specs from DabDesign or DabFonts; link instead.
+- Do not duplicate design tokens, font files, or component specs from DabDesign or DabFonts; link to their `GUIDELINE.md` entry points instead.
 - When adding a rule, state the failure it prevents in the PR description.
 - Update the index in `README.md` when adding or renaming a document.
 - Keep numbering stable. Do not renumber existing documents for a new topic; append with the next free number.

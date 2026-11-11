@@ -1,6 +1,6 @@
 # 07 — Content, SEO, and Internationalization
 
-**Applies to:** all user-facing pages. Design voice rules in DabDesign take precedence for tone.
+**Applies to:** all user-facing pages. `DabDesign/GUIDELINE.md` and `DabFonts/GUIDELINE.md` take precedence for tone and typesetting.
 
 ## 1. Language policy
 
@@ -10,10 +10,11 @@
 - Do not ship unreviewed machine translation as production copy.
 - Repository artifacts (docs, code, comments, commit messages) are in English; user-facing copy follows the project locale.
 - Never build a sentence by concatenating translated fragments. Use full sentences with placeholders.
+- Follow `DabFonts/GUIDELINE.md` for CJK punctuation spacing, CJK/Latin mixed-script spacing, and permitted weights.
 
 ## 2. Voice and microcopy
 
-- Follow DabDesign's voice: plain, direct, calm, editorial.
+- Follow `DabDesign/GUIDELINE.md` and, for the personal series, `DabDesign.md` for voice: plain, direct, calm, editorial.
 - Sentence case for headings, labels, and buttons. No exclamation marks. No marketing filler.
 - Buttons name the action: "Save changes", not "Submit" or "OK".
 - Errors state what happened and what to do next. No blame, no bare error codes.

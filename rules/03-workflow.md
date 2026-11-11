@@ -58,8 +58,8 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 
 - [ ] Matches the acceptance criteria; no unrelated changes
 - [ ] Gates pass (rule 04)
-- [ ] Design tokens used; no hardcoded visual values
-- [ ] Responsive at 375 / 768 / 1440
+- [ ] `DabDesign/GUIDELINE.md` followed; semantic tokens only, no hardcoded visual values
+- [ ] Responsive at every width in `DabDesign/GUIDELINE.md`
 - [ ] Keyboard, focus, contrast, and labels checked
 - [ ] Loading, empty, and error states handled
 - [ ] No secrets, debug logs, or commented-out code
