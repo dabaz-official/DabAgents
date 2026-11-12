@@ -25,7 +25,7 @@
 
 ## 3. SEO
 
-- Unique `<title>` per page, ≤ 60 characters, pattern `Page — Site`.
+- Unique `<title>` per page; format, casing, separator, and length follow rule 10.
 - Meta description, specific to the page. Use the range for the page language:
 
   | Language | Range |
@@ -35,9 +35,9 @@
 
   Count Unicode code points, not bytes. Do not pad a description to reach a range; if it is complete and shorter, leave it. For any other script, record the range in the project `AGENTS.md`.
 - Canonical URL on every page.
-- Open Graph and Twitter card metadata; OG image 1200×630.
+- Open Graph and Twitter metadata follow rule 10; the description is the same string as the meta description.
 - `sitemap.xml` and `robots.txt`; exclude drafts and private routes.
-- One `<h1>` per page; headings follow a logical order.
+- One `<h1>` per page; it equals the page title without the site name (rule 10). Headings follow a logical order.
 - Structured data (JSON-LD) for articles, products, FAQs, and organization where relevant.
 - Descriptive internal link text; never "click here".
 - Real 404 responses; redirects for moved URLs; no soft 404s.

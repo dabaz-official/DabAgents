@@ -45,6 +45,7 @@ pnpm check        # full gate: format + lint + typecheck + test + build
 - [ ] `pnpm check` passes
 - [ ] Responsive at every width in `DabDesign/GUIDELINE.md` (currently 375, 390, 640, 768, 1024, 1280, 1536)
 - [ ] Keyboard + focus + contrast checked
+- [ ] Surface identity follows rule 10 (title, icons, OG, manifest)
 - [ ] No console or server errors
 - [ ] Loading, empty, and error states handled
 - [ ] Docs updated (`README`, `AGENTS.md`, ADR, changelog) if behavior changed

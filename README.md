@@ -1,6 +1,6 @@
 # DabAgent-Guideline
 
-**Version:** 0.1.1 · **Updated:** 2026-11-12
+**Version:** 0.2.0 · **Updated:** 2026-11-12
 
 Rules and conventions agents must follow when building and shipping DabAZ web projects.
 
@@ -12,7 +12,7 @@ This repository governs how agent-assisted work is planned, written, verified, a
 |---|---|---|
 | [DabDesign](https://github.com/dabaz-official/DabDesign) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabDesign/blob/main/GUIDELINE.md) | Design tokens, components, contrast, motion, voice |
 | [DabFonts](https://github.com/dabaz-official/DabFonts) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabFonts/blob/main/GUIDELINE.md) | Font files, typesetting, loading, licensing |
-| This repository | `rules/` | Engineering, workflow, quality gates, security, deployment, content/SEO, compatibility, documentation |
+| This repository | `rules/` | Engineering, workflow, quality gates, security, deployment, content/SEO, surface identity, compatibility, documentation |
 
 Start each dependency at its `GUIDELINE.md`. It defines the required read order and routes to the normative files: DabDesign uses `core.md` and `GOVERNANCE.md`; DabFonts uses `TYPESETTING.md`.
 
@@ -29,6 +29,7 @@ For any web task:
 3. `rules/02-engineering.md`
 4. `rules/03-workflow.md`
 5. `rules/04-quality-gates.md`
+6. `rules/10-surface-identity.md`
 
 Then as relevant: `05-security.md`, `06-deployment.md`, `07-content-seo-i18n.md`, `08-compatibility.md`, `09-docs-and-memory.md`.
 
@@ -47,6 +48,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 | 07 | [Content, SEO, and i18n](rules/07-content-seo-i18n.md) | Language policy, voice, metadata, structured data, localization |
 | 08 | [Compatibility](rules/08-compatibility.md) | Browser matrix, responsive rules, input, progressive enhancement |
 | 09 | [Documentation and Memory](rules/09-docs-and-memory.md) | README, AGENTS.md, ADRs, changelog, comments |
+| 10 | [Surface Identity](rules/10-surface-identity.md) | Title format, description reuse, icons, Open Graph, manifest, browser colors |
 
 ## Adopting in a project
 

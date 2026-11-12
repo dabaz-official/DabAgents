@@ -17,7 +17,7 @@ This repository is a **guidelines repository**, not an application. It has no bu
 ```
 README.md                  index and source-of-truth contract
 AGENTS.md                  this file — rules for editing the guidelines
-rules/01..09               the guidelines themselves
+rules/01..10               the guidelines themselves
 templates/AGENTS.md        per-project contract template
 ```
 

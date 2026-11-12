@@ -78,6 +78,7 @@ jobs:
 
 - Check every width in `DabDesign/GUIDELINE.md` §7 (currently 375, 390, 640, 768, 1024, 1280, 1536). Also confirm no horizontal scroll at 320.
 - Use semantic token roles only; no primitive ramps, raw values, local scales, or component forks.
+- Surface identity follows rule 10: one title pattern, one description source, the required icon set, a 1200×630 OG image, and theme colors from tokens.
 - Check light and dark mode when the project supports both.
 - Walk the page with the keyboard: tab order, visible focus, no traps.
 - Zoom to 200% and confirm the layout remains usable.
@@ -127,6 +128,7 @@ Project-specific exceptions go in `AGENTS.md` with a reason and review date. Do 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
 - [ ] Responsive at every width in `DabDesign/GUIDELINE.md` and state checks pass
+- [ ] Surface identity checked (rule 10)
 - [ ] Accessibility gate passes
 - [ ] Performance gate passes or has a recorded exception
 - [ ] No console or server errors
