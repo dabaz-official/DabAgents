@@ -13,15 +13,16 @@
 
 ## Required reading (in order)
 
-1. **DabAgent-Guideline** @ `<tag or commit SHA>` — `<url>`
-2. **DabDesign** @ `<tag or commit SHA>` — design tokens, components, contrast, voice
-3. **DabFonts** @ `<tag or commit SHA>` — font files and loading (omit if the project uses DabDesign's vendored fonts)
+1. **DabAgent-Guideline** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-agent-operating.md`, which routes to the other rules
+2. **DabDesign** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `core.md` and `GOVERNANCE.md`
+3. **DabFonts** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `TYPESETTING.md`
 
 ## Stack
 
 - **Framework:** (Next.js App Router / Astro / Vite + React / Expo)
 - **Language:** TypeScript, `strict: true`
-- **Styling:** Tailwind CSS v4 + DabDesign tokens
+- **Styling:** Tailwind CSS v4 + DabDesign tokens, following `DabDesign/GUIDELINE.md`
+- **Fonts:** DabFonts, following `DabFonts/GUIDELINE.md`
 - **Package manager:** pnpm (existing projects: state the actual one)
 - **Node:** current Active LTS, pinned in `.nvmrc`
 - **Deploy:** Vercel
@@ -42,8 +43,9 @@ pnpm check        # full gate: format + lint + typecheck + test + build
 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
-- [ ] Responsive at 375 / 768 / 1440
+- [ ] Responsive at every width in `DabDesign/GUIDELINE.md` (currently 375, 390, 640, 768, 1024, 1280, 1536)
 - [ ] Keyboard + focus + contrast checked
+- [ ] Surface identity follows rule 10 (title, icons, OG, manifest)
 - [ ] No console or server errors
 - [ ] Loading, empty, and error states handled
 - [ ] Docs updated (`README`, `AGENTS.md`, ADR, changelog) if behavior changed

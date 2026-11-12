@@ -52,31 +52,13 @@ For documentation-only changes, `build` may be skipped with a stated reason. Eve
 - A Vercel build is not a substitute for CI checks.
 - `main` stays green. Fix a red `main` before starting new work.
 
-Minimal workflow:
-
-```yaml
-name: ci
-on:
-  pull_request:
-  push:
-    branches: [main]
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm check
-```
+Minimal workflow: copy [`templates/ci.yml`](../templates/ci.yml) to `.github/workflows/ci.yml`.
 
 ## 4. Visual and UX gate
 
-- Check widths: 375, 768, 1440. Also confirm no horizontal scroll at 320.
+- Check every width in `DabDesign/GUIDELINE.md` §7 (currently 375, 390, 640, 768, 1024, 1280, 1536). Also confirm no horizontal scroll at 320.
+- Use semantic token roles only; no primitive ramps, raw values, local scales, or component forks.
+- Surface identity follows rule 10: one title pattern, one description source, the required icon set, a 1200×630 OG image, and theme colors from tokens.
 - Check light and dark mode when the project supports both.
 - Walk the page with the keyboard: tab order, visible focus, no traps.
 - Zoom to 200% and confirm the layout remains usable.
@@ -91,7 +73,7 @@ Target WCAG 2.2 AA.
 - No serious or critical axe violations.
 - Every input has a label; every image has appropriate `alt`.
 - Every icon-only button has an accessible name.
-- Contrast follows DabDesign's measured pairs.
+- Contrast follows `DabDesign/GUIDELINE.md` and the measured pairs in `core.md` or the project theme.
 - Headings are semantic and ordered; landmarks are present.
 - `prefers-reduced-motion` is respected.
 - No keyboard trap; dialogs restore focus on close.
@@ -125,7 +107,8 @@ Project-specific exceptions go in `AGENTS.md` with a reason and review date. Do 
 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
-- [ ] Responsive and state checks pass
+- [ ] Responsive at every width in `DabDesign/GUIDELINE.md` and state checks pass
+- [ ] Surface identity checked (rule 10)
 - [ ] Accessibility gate passes
 - [ ] Performance gate passes or has a recorded exception
 - [ ] No console or server errors

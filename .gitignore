@@ -3,3 +3,6 @@
 .env
 .env.local
 .env.*.local
+
+# Scratch test project, not part of the guidelines
+test/

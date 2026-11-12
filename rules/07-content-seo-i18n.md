@@ -1,6 +1,6 @@
 # 07 — Content, SEO, and Internationalization
 
-**Applies to:** all user-facing pages. Design voice rules in DabDesign take precedence for tone.
+**Applies to:** all user-facing pages. `DabDesign/GUIDELINE.md` and `DabFonts/GUIDELINE.md` take precedence for tone and typesetting.
 
 ## 1. Language policy
 
@@ -10,10 +10,11 @@
 - Do not ship unreviewed machine translation as production copy.
 - Repository artifacts (docs, code, comments, commit messages) are in English; user-facing copy follows the project locale.
 - Never build a sentence by concatenating translated fragments. Use full sentences with placeholders.
+- Follow `DabFonts/GUIDELINE.md` for CJK punctuation spacing, CJK/Latin mixed-script spacing, and permitted weights.
 
 ## 2. Voice and microcopy
 
-- Follow DabDesign's voice: plain, direct, calm, editorial.
+- Follow `DabDesign/GUIDELINE.md` and, for the personal series, `DabDesign.md` for voice: plain, direct, calm, editorial.
 - Sentence case for headings, labels, and buttons. No exclamation marks. No marketing filler.
 - Buttons name the action: "Save changes", not "Submit" or "OK".
 - Errors state what happened and what to do next. No blame, no bare error codes.
@@ -24,12 +25,19 @@
 
 ## 3. SEO
 
-- Unique `<title>` per page, ≤ 60 characters, pattern `Page — Site`.
-- Meta description, 120–160 characters, specific to the page.
+- Unique `<title>` per page; format, casing, separator, and length follow rule 10.
+- Meta description, specific to the page. Use the range for the page language:
+
+  | Language | Range |
+  |---|---|
+  | Latin, Cyrillic, Greek, and other alphabetic scripts | 120–160 characters |
+  | Chinese, Japanese, Korean | 60–90 characters |
+
+  Count Unicode code points, not bytes. Do not pad a description to reach a range; if it is complete and shorter, leave it. For any other script, record the range in the project `AGENTS.md`.
 - Canonical URL on every page.
-- Open Graph and Twitter card metadata; OG image 1200×630.
+- Open Graph and Twitter metadata follow rule 10; the description is the same string as the meta description.
 - `sitemap.xml` and `robots.txt`; exclude drafts and private routes.
-- One `<h1>` per page; headings follow a logical order.
+- One `<h1>` per page; it equals the page title without the site name (rule 10). Headings follow a logical order.
 - Structured data (JSON-LD) for articles, products, FAQs, and organization where relevant.
 - Descriptive internal link text; never "click here".
 - Real 404 responses; redirects for moved URLs; no soft 404s.
