@@ -58,14 +58,9 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 
 - [ ] Matches the acceptance criteria; no unrelated changes
 - [ ] Gates pass (rule 04)
-- [ ] `DabDesign/GUIDELINE.md` followed; semantic tokens only, no hardcoded visual values
-- [ ] Responsive at every width in `DabDesign/GUIDELINE.md`
-- [ ] Surface identity follows rule 10 (title, icons, OG, manifest)
-- [ ] Keyboard, focus, contrast, and labels checked
-- [ ] Loading, empty, and error states handled
-- [ ] No secrets, debug logs, or commented-out code
+- [ ] UI changes include screenshots or a preview link
 - [ ] Docs updated if behavior, commands, or architecture changed
-- [ ] Vercel preview checked for UI changes
+- [ ] Risks and rollback notes are in the PR
 
 ## 5. Releases and versioning
 

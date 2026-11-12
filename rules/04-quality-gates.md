@@ -52,27 +52,7 @@ For documentation-only changes, `build` may be skipped with a stated reason. Eve
 - A Vercel build is not a substitute for CI checks.
 - `main` stays green. Fix a red `main` before starting new work.
 
-Minimal workflow:
-
-```yaml
-name: ci
-on:
-  pull_request:
-  push:
-    branches: [main]
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm check
-```
+Minimal workflow: copy [`templates/ci.yml`](../templates/ci.yml) to `.github/workflows/ci.yml`.
 
 ## 4. Visual and UX gate
 

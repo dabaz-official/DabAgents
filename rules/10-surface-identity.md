@@ -71,17 +71,12 @@ Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gr
 
 ## 5. Open Graph and Twitter
 
-- One image size: 1200×630 px, 1.91:1. No other sizes. Platforms crop or scale.
-- One template for the whole site; pages vary only the page title.
-- Light theme only: `color-background` background, `color-text-primary` title, `color-text-secondary` supporting line.
-- Layout: 80 px padding; wordmark 24/600 top-left; title 48/600, at most 2 lines; supporting line 24/400, at most 1 line; footer 16/400 with the canonical host on the left and the year on the right.
-- Title = page title. Supporting line = site tagline (≤ 60 characters), the same on every image. Do not repeat the site name in the title; the wordmark carries it.
-- If the title does not fit two lines, shorten the page title; never shrink the type or move outside the safe area.
-- All text is at least 4.5:1 against the background.
+- One image size: 1200×630 px, 1.91:1. No other sizes. One template for the whole site; pages vary only the page title.
+- Light theme only. Layout and type: [`templates/og-image.md`](../templates/og-image.md).
+- Title = page title. Supporting line = site tagline (≤ 60 characters), the same on every image.
 - File: PNG, sRGB, ≤ 5 MB hard limit, target ≤ 300 KB. One default image per site; routes may override it. Pages without custom art use the default.
 - `og:image:alt` = page title, ≤ 125 characters.
 - Twitter uses the same image and copy with `summary_large_image`. If the framework needs a separate file, re-export the same generator; do not design a second image.
-- Type-only template by default. No screenshots, device frames, QR codes, or CTA buttons. A real product screenshot is allowed only when it is the page's subject and stays inside the safe area.
 - `og:description` is the meta description. Do not write a second description.
 - `og:type` is `website` except article pages, which use `article`.
 - Add `twitter:site` or `twitter:creator` only when the project has an official account; never invent a handle.
