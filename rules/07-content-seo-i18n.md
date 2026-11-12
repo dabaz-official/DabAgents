@@ -26,7 +26,14 @@
 ## 3. SEO
 
 - Unique `<title>` per page, ≤ 60 characters, pattern `Page — Site`.
-- Meta description, 120–160 characters, specific to the page.
+- Meta description, specific to the page. Use the range for the page language:
+
+  | Language | Range |
+  |---|---|
+  | Latin, Cyrillic, Greek, and other alphabetic scripts | 120–160 characters |
+  | Chinese, Japanese, Korean | 60–90 characters |
+
+  Count Unicode code points, not bytes. Do not pad a description to reach a range; if it is complete and shorter, leave it. For any other script, record the range in the project `AGENTS.md`.
 - Canonical URL on every page.
 - Open Graph and Twitter card metadata; OG image 1200×630.
 - `sitemap.xml` and `robots.txt`; exclude drafts and private routes.
