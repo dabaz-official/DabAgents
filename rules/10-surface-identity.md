@@ -35,7 +35,6 @@ Pattern: `<page title> — <site name>`. Home route: `<site name> — <tagline>`
 - Page part: sentence case, no trailing period, no "Home", "Welcome", or "Page". Keep acronyms and product names as written.
 - Site name: official casing, once, at the start on the home route and at the end everywhere else.
 - The `<h1>` is the page title without the site name. One `<h1>`.
-- `og:title` and `twitter:title` are the page title, not the full `<title>`; `og:site_name` carries the site.
 - Length budget: 60 character units for the whole `<title>`, counting each CJK character as 2. Shorten the page title or the tagline, never the site name.
 - Utility pages follow the same pattern: `404 — Site`, `Sign in — Site`.
 
@@ -48,11 +47,21 @@ Pattern: `<page title> — <site name>`. Home route: `<site name> — <tagline>`
 
 ## 4. Icons
 
-Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gradients. The mark stays inside the central 80% safe area. The background either fills the canvas or is a plate with baked corners, within the limits below.
+Masters: one or two square SVGs, 512×512 viewBox, flat mark, no words or taglines, no gradients. The mark stays inside the central 80% safe area.
 
-- Icon files use the light-theme `color-primary` background and `color-on-primary` mark. They do not switch with the color scheme.
-- Baked corners are allowed. Keep the radius at or below the platform mask: iOS uses a squircle of about 22.4% of the side, and a larger radius is clipped by the mask instead of honored.
-- Transparency is allowed in the Apple and maskable PNGs. Transparent corners are the only transparent area; no holes inside the plate. On the maskable export the plate still covers the central circle of 80% diameter, so a circular launcher crop never shows the background through it.
+| Master | Background | Used for |
+|---|---|---|
+| Plate | Full background or plate with baked corners | `apple-icon.png`, `icon-maskable-512.png` |
+| Mark | Transparent | `favicon.ico`, `icon.svg`, `icon-192.png`, `icon-512.png` |
+
+- If one SVG is supplied, it is the plate master and covers every surface. If two are supplied, the plate master covers iOS and maskable, and the mark master covers browser and standard manifest icons.
+- If the only supplied SVG is a transparent mark, use it for browser and standard manifest icons, and ask before generating iOS or maskable surfaces.
+- Treat each master as the source of truth for its surfaces: do not re-round, pad, crop, or fill the plate's transparent corners; do not add a background to the mark master. Preserve supplied alpha.
+- The plate master uses the light-theme `color-primary` background and `color-on-primary` mark. It does not switch with the color scheme.
+- The mark master keeps its supplied colors and transparent background; do not recolor it unless the owner asks.
+- Baked corners are allowed on the plate. Keep the radius at or below the platform mask: iOS uses a squircle of about 22.4% of the side, and a larger radius is clipped by the mask instead of honored.
+- A supplied plate needs no extra background when its radius is at or below the platform mask and it covers the central 80% circle. Do not add a second plate.
+- Plate exports may keep transparent corners; they are the only transparent area, with no holes inside the plate. On the maskable export the plate still covers the central circle of 80% diameter, so a circular launcher crop never shows the background through it.
 - Test the mark at 16×16. If it is unreadable, simplify the mark; do not add a second favicon.
 
 | File | Size / format | Purpose |
@@ -73,14 +82,14 @@ Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gr
 
 ## 5. Open Graph and Twitter
 
-- One image size: 1200×630 px, 1.91:1. No other sizes. One template for the whole site; pages vary only the page title.
+- One image size: 1200×630 px, 1.91:1. No other sizes. One template for generated images; pages vary only the page title.
 - Light theme only. Layout and type: [`templates/og-image.md`](../templates/og-image.md).
-- Title = page title. Supporting line = site tagline (≤ 60 characters), the same on every image.
+- The home OG image is a custom asset supplied by the owner. Use it when present. Generate a home image only when none is supplied.
+- Generated page image: title = page title, supporting line = site tagline (≤ 60 characters).
+- Generated home image: title = site name, supporting line = site tagline. Do not use the tagline as the title; it would repeat.
 - File: PNG, sRGB, ≤ 5 MB hard limit, target ≤ 300 KB. One default image per site; routes may override it. Pages without custom art use the default.
 - `og:image:alt` = page title, ≤ 125 characters.
 - Twitter uses the same image and copy with `summary_large_image`. If the framework needs a separate file, re-export the same generator; do not design a second image.
-- `og:description` is the meta description. Do not write a second description.
-- `og:type` is `website` except article pages, which use `article`.
 - Add `twitter:site` or `twitter:creator` only when the project has an official account; never invent a handle.
 
 ## 6. Checks
@@ -89,8 +98,9 @@ Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gr
 - [ ] `<h1>`, `og:title`, and `twitter:title` equal the page title; `<h1>` appears once.
 - [ ] Meta, OG, and Twitter descriptions are the same string and within the rule 07 range.
 - [ ] `favicon.ico` has 16/32/48; `icon.svg` and the 180×180 Apple icon exist.
-- [ ] Baked corner radius stays within the platform mask; transparency appears only outside the plate; the mark is readable at 16×16.
-- [ ] Manifest lists 192, 512, and maskable 512; colors match the light background.
-- [ ] `theme-color` has light and dark entries.
-- [ ] OG image is 1200×630, light theme, 80 px padding, and the same image is used for Twitter.
+- [ ] On the plate export, the baked corner radius stays within the platform mask and transparency appears only outside the plate; the mark is readable at 16×16.
+- [ ] Each supplied master is 512×512 with the mark inside the 80% safe area; the plate's radius is within the platform mask and covers the 80% circle.
+- [ ] Derivatives preserve the assigned master's alpha: no re-rounding, padding, filling the plate's transparent corners, or adding a background to the mark.
+- [ ] Manifest lists 192 and 512 from the mark master and maskable 512 from the plate; the maskable plate matches the light background; `theme-color` has light and dark entries.
+- [ ] OG image is 1200×630, light theme, 80 px padding, and reused for Twitter; home uses the supplied custom image, and the generated fallback titles the site name above the tagline.
 - [ ] A metadata test asserts the title pattern, description range, canonical URL, OG size, and icon files.
