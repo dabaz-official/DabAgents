@@ -24,7 +24,7 @@ Start from [`templates/README.md`](../templates/README.md).
 ## 3. AGENTS.md
 
 - Keep it to one page.
-- Pin DabAgent-Guideline, DabDesign, and DabFonts by tag or commit SHA; point to each dependency's `GUIDELINE.md` as its entry point.
+- Pin DabAgents, DabDesign, and DabFonts by tag or commit SHA; point to each dependency's `GUIDELINE.md` as its entry point.
 - List canonical commands and the Definition of Done.
 - State the primary locale, deploy target, and project-specific rules.
 - Record exceptions with a reason and review date.

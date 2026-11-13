@@ -14,7 +14,7 @@
 
 ## Required reading (in order)
 
-1. **DabAgent-Guideline** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-operating.md`, which routes to the other rules
+1. **DabAgents** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-operating.md`, which routes to the other rules
 2. **DabDesign** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `core.md` and `GOVERNANCE.md`
 3. **DabFonts** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `TYPESETTING.md`
 
