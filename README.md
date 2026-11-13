@@ -10,7 +10,7 @@ This repository governs how agent-assisted work is planned, written, verified, a
 
 | Source of truth | Entry point | Owns |
 |---|---|---|
-| [DabDesign](https://github.com/dabaz-official/DabDesign) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabDesign/blob/main/GUIDELINE.md) | Design tokens, components, contrast, motion, voice |
+| [DabDesign](https://github.com/dabaz-official/DabDesign) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabDesign/blob/main/GUIDELINE.md) | Design tokens, components, contrast, motion |
 | [DabFonts](https://github.com/dabaz-official/DabFonts) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabFonts/blob/main/GUIDELINE.md) | Font files, typesetting, loading, licensing |
 | This repository | `rules/` and `templates/` | Engineering, workflow, quality gates, security, deployment, content/SEO, surface identity, compatibility, documentation |
 
@@ -41,7 +41,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 | 04 | [Quality Gates](rules/04-quality.md) | Canonical scripts, CI, visual/a11y/perf/security gates, testing, Definition of Done |
 | 05 | [Security and Privacy](rules/05-security.md) | Secrets, env contract, headers, auth, dependencies, privacy |
 | 06 | [Deployment and Operations](rules/06-deployment.md) | Vercel environments, env vars, domains, rollback, observability |
-| 07 | [Content, SEO, and i18n](rules/07-content-seo-i18n.md) | Language policy, voice, metadata, structured data, localization |
+| 07 | [Content, SEO, and i18n](rules/07-content.md) | Language policy, voice, metadata, structured data, localization |
 | 08 | [Compatibility](rules/08-compatibility.md) | Browser matrix, responsive rules, input, progressive enhancement |
 | 09 | [Documentation and Memory](rules/09-docs-and-memory.md) | README, AGENTS.md, ADRs, changelog, comments |
 | 10 | [Surface Identity](rules/10-surface-identity.md) | Title format, description reuse, icons, Open Graph, manifest, browser colors |

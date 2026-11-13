@@ -66,7 +66,7 @@ Load a rule only when its trigger fires.
 | gates, CI, Definition of Done, testing, accessibility, performance budgets | [04](04-quality.md) |
 | secrets, environment variables, auth, headers, privacy | [05](05-security.md) |
 | Vercel, domains, deploys, rollback, observability | [06](06-deployment.md) |
-| copy, SEO, i18n, media, content structure | [07](07-content-seo-i18n.md) |
+| copy, SEO, i18n, media, content structure | [07](07-content.md) |
 | browsers, responsive layout, input, CSS/JS support | [08](08-compatibility.md) |
 | README, AGENTS.md, ADRs, changelog, comments | [09](09-docs-and-memory.md) |
 | title, icons, Open Graph, manifest, theme colors | [10](10-surface-identity.md) |
