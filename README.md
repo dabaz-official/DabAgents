@@ -1,6 +1,6 @@
 # DabAgent-Guideline
 
-**Version:** 0.3.0 · **Updated:** 2026-11-12
+**Version:** 0.4.0 · **Updated:** 2026-11-14
 
 Rules and conventions agents must follow when building and shipping DabAZ web projects.
 
