@@ -25,7 +25,7 @@ Do not copy token values, font files, or component specs into this repository. L
 For any web task:
 
 1. The project's `AGENTS.md`
-2. [`rules/01-agent-operating.md`](rules/01-agent-operating.md) — the only always-read rule; it routes to the rest.
+2. [`rules/01-operating.md`](rules/01-operating.md) — the only always-read rule; it routes to the rest.
 
 Read the other rules only when their trigger fires; the table is in rule 01. Do not load all ten by default.
 
@@ -35,7 +35,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 
 | # | Document | Covers |
 |---|---|---|
-| 01 | [Agent Operating Rules](rules/01-agent-operating.md) | Read order and routing, plan-first, ask vs. decide, scope, verification, reporting, stop conditions |
+| 01 | [Operating Rules](rules/01-operating.md) | Read order and routing, plan-first, ask vs. decide, scope, verification, reporting, stop conditions |
 | 02 | [Engineering Standards](rules/02-engineering.md) | Stack selection, structure, TypeScript, styling, components, data, dependencies |
 | 03 | [Git and Delivery Workflow](rules/03-workflow.md) | Branches, commits, PRs, reviews, releases, hotfixes |
 | 04 | [Quality Gates](rules/04-quality-gates.md) | Canonical scripts, CI, visual/a11y/perf/security gates, Definition of Done |
