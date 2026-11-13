@@ -7,11 +7,12 @@
 - Put the site name, tagline, canonical origin, primary locale, default description, theme colors, icon paths, and OG size in one `siteConfig` module.
 - The site name has one casing everywhere: `<title>`, `og:site_name`, manifest, wordmark, and footer.
 - A page owns only its page title and description. It never repeats the site name.
-- The page title, `<h1>`, `og:title`, and `twitter:title` are the same string. The full `<title>` appends the site name once.
+- The page title, `<h1>`, `og:title`, and `twitter:title` are the same string. The full `<title>` carries the site name once: at the end everywhere, at the start on the home route.
 
 | Field | Value |
 |---|---|
 | `<title>` | `<page title> — <site name>` |
+| `<title>` on the home route | `<site name> — <tagline>` |
 | `<h1>` | `<page title>` |
 | `meta[name="description"]` | page description |
 | `og:title`, `twitter:title` | `<page title>` |
@@ -26,15 +27,16 @@
 
 ## 2. Page title
 
-Pattern: `<page title> — <site name>`
+Pattern: `<page title> — <site name>`. Home route: `<site name> — <tagline>`.
 
 - Separator: em dash `—` (U+2014) with one space on each side. No `|`, `-`, `:`, `·`, or `•` between page and site.
-- Order: page first, site last. Home uses the site tagline as the page title: `<tagline> — <site>`.
+- Order: page first, site last, except on the home route, where the site name leads and the tagline follows.
+- Home route: `/` or one locale segment (`/en`, `/zh`), with or without a trailing slash, including the default locale served unprefixed. Nothing deeper. Its page title stays the tagline, so `<h1>`, `og:title`, and `twitter:title` remain the tagline; only `<title>` puts the site name first. Localized pages such as `/en/pricing` use the page-first pattern.
 - Page part: sentence case, no trailing period, no "Home", "Welcome", or "Page". Keep acronyms and product names as written.
-- Site name: official casing, once, at the end.
+- Site name: official casing, once, at the start on the home route and at the end everywhere else.
 - The `<h1>` is the page title without the site name. One `<h1>`.
 - `og:title` and `twitter:title` are the page title, not the full `<title>`; `og:site_name` carries the site.
-- Length budget: 60 character units, counting each CJK character as 2. Shorten the page title, never the site name.
+- Length budget: 60 character units for the whole `<title>`, counting each CJK character as 2. Shorten the page title or the tagline, never the site name.
 - Utility pages follow the same pattern: `404 — Site`, `Sign in — Site`.
 
 ## 3. Description
@@ -83,7 +85,7 @@ Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gr
 
 ## 6. Checks
 
-- [ ] `<title>` matches `<page> — <site>`; one em dash, sentence case, one site name, within budget.
+- [ ] `<title>` matches `<page> — <site>` on every route except the home route, which matches `<site> — <tagline>`; one em dash, sentence case, one site name, within budget.
 - [ ] `<h1>`, `og:title`, and `twitter:title` equal the page title; `<h1>` appears once.
 - [ ] Meta, OG, and Twitter descriptions are the same string and within the rule 07 range.
 - [ ] `favicon.ico` has 16/32/48; `icon.svg` and the 180×180 opaque Apple icon exist.
