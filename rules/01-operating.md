@@ -63,7 +63,7 @@ Load a rule only when its trigger fires.
 |---|---|
 | code: stack, structure, TypeScript, styling, components, data, dependencies, performance | [02](02-engineering.md) |
 | branches, commits, PRs, reviews, releases, hotfixes | [03](03-workflow.md) |
-| gates, CI, Definition of Done, testing, accessibility, performance budgets | [04](04-quality-gates.md) |
+| gates, CI, Definition of Done, testing, accessibility, performance budgets | [04](04-quality.md) |
 | secrets, environment variables, auth, headers, privacy | [05](05-security.md) |
 | Vercel, domains, deploys, rollback, observability | [06](06-deployment.md) |
 | copy, SEO, i18n, media, content structure | [07](07-content-seo-i18n.md) |
@@ -80,4 +80,4 @@ Whatever rule you load, never hardcode design values, commit secrets, or push wi
 
 ## 7. Done
 
-"Done" means the Definition of Done in [rule 04 §8](04-quality-gates.md) is complete. Do not invent a weaker definition.
+"Done" means the Definition of Done in [rule 04 §8](04-quality.md) is complete. Do not invent a weaker definition.

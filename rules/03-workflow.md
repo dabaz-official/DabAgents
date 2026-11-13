@@ -43,7 +43,7 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 
 ## 4. Review and merge
 
-- The PR must satisfy the Definition of Done in [rule 04 §8](04-quality-gates.md). Do not merge with a failing gate.
+- The PR must satisfy the Definition of Done in [rule 04 §8](04-quality.md). Do not merge with a failing gate.
 - The diff stays within the stated scope; unrelated changes are split out.
 - UI changes include screenshots or a preview link.
 - Risks and rollback notes are in the PR.

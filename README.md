@@ -38,7 +38,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 | 01 | [Operating Rules](rules/01-operating.md) | Read order and routing, plan-first, ask vs. decide, scope, verification, reporting, stop conditions |
 | 02 | [Engineering Standards](rules/02-engineering.md) | Stack selection, structure, TypeScript, styling, components, data, dependencies |
 | 03 | [Git and Delivery Workflow](rules/03-workflow.md) | Branches, commits, PRs, reviews, releases, hotfixes |
-| 04 | [Quality Gates](rules/04-quality-gates.md) | Canonical scripts, CI, visual/a11y/perf/security gates, Definition of Done |
+| 04 | [Quality Gates](rules/04-quality.md) | Canonical scripts, CI, visual/a11y/perf/security gates, testing, Definition of Done |
 | 05 | [Security and Privacy](rules/05-security.md) | Secrets, env contract, headers, auth, dependencies, privacy |
 | 06 | [Deployment and Operations](rules/06-deployment.md) | Vercel environments, env vars, domains, rollback, observability |
 | 07 | [Content, SEO, and i18n](rules/07-content-seo-i18n.md) | Language policy, voice, metadata, structured data, localization |
@@ -51,7 +51,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 1. Copy [`templates/AGENTS.md`](templates/AGENTS.md) to the project root.
 2. Fill in stack, commands, primary locale, and the pinned commit plus `GUIDELINE.md` entry point for DabDesign and DabFonts.
 3. Pin this repository to a tag or commit SHA; update deliberately.
-4. Add the project's `check` script (see [rule 04](rules/04-quality-gates.md)).
+4. Add the project's `check` script (see [rule 04](rules/04-quality.md)).
 5. Copy [`templates/ci.yml`](templates/ci.yml) to `.github/workflows/ci.yml`.
 
 Until the first tag exists, pin to a commit SHA.
