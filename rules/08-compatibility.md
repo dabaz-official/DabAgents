@@ -1,4 +1,4 @@
-# 08 — Compatibility and Responsive Policy
+# 08 — Compatibility
 
 **Applies to:** all web projects. Target modern evergreen browsers; do not carry legacy support by default.
 
@@ -43,6 +43,5 @@
 
 - If the project has end-to-end tests, run them on Chromium and WebKit.
 - Manually check the current Safari (desktop and iOS) and Chrome before a release.
-- Check the smallest supported width, the largest layout, and a zoomed view.
 - Report unsupported combinations honestly; do not silently drop a feature.
 - Add a regression test when fixing a browser-specific defect.
