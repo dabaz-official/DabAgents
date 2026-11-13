@@ -19,6 +19,8 @@
 - Keep commands copy-pasteable and current.
 - Link to `AGENTS.md` and `DabDesign/GUIDELINE.md` instead of duplicating them.
 
+Start from [`templates/README.md`](../templates/README.md).
+
 ## 3. AGENTS.md
 
 - Keep it to one page.
@@ -43,6 +45,8 @@ Write an ADR when a decision:
 - ADRs are immutable. Supersede with a new record instead of editing history.
 - Link the ADR from the PR that implements it.
 - Design decisions belong in `DabDesign/GUIDELINE.md` and its governance, not in project ADRs.
+
+Start from [`templates/adr.md`](../templates/adr.md).
 
 ## 5. Changelog
 
