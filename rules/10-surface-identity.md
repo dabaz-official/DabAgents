@@ -48,18 +48,18 @@ Pattern: `<page title> — <site name>`. Home route: `<site name> — <tagline>`
 
 ## 4. Icons
 
-Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gradients. The mark stays inside the central 80% safe area; the background fills the canvas.
+Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gradients. The mark stays inside the central 80% safe area. The background either fills the canvas or is a plate with baked corners, within the limits below.
 
 - Icon files use the light-theme `color-primary` background and `color-on-primary` mark. They do not switch with the color scheme.
-- No rounded corners baked in; the OS applies its mask.
-- No transparency in the Apple or maskable PNGs.
+- Baked corners are allowed. Keep the radius at or below the platform mask: iOS uses a squircle of about 22.4% of the side, and a larger radius is clipped by the mask instead of honored.
+- Transparency is allowed in the Apple and maskable PNGs. Transparent corners are the only transparent area; no holes inside the plate. On the maskable export the plate still covers the central circle of 80% diameter, so a circular launcher crop never shows the background through it.
 - Test the mark at 16×16. If it is unreadable, simplify the mark; do not add a second favicon.
 
 | File | Size / format | Purpose |
 |---|---|---|
 | `app/favicon.ico` | 16, 32, 48 multi-resolution ICO | Browser tab, legacy |
 | `app/icon.svg` | scalable, 1:1 | Modern browser tab |
-| `app/apple-icon.png` | 180×180 PNG, opaque | iOS home screen |
+| `app/apple-icon.png` | 180×180 PNG | iOS home screen |
 | `public/icons/icon-192.png` | 192×192 PNG | Manifest |
 | `public/icons/icon-512.png` | 512×512 PNG | Manifest, splash |
 | `public/icons/icon-maskable-512.png` | 512×512 PNG, 80% safe zone | Maskable |
@@ -88,7 +88,8 @@ Master: one square SVG, 512×512 viewBox, flat mark, no words or taglines, no gr
 - [ ] `<title>` matches `<page> — <site>` on every route except the home route, which matches `<site> — <tagline>`; one em dash, sentence case, one site name, within budget.
 - [ ] `<h1>`, `og:title`, and `twitter:title` equal the page title; `<h1>` appears once.
 - [ ] Meta, OG, and Twitter descriptions are the same string and within the rule 07 range.
-- [ ] `favicon.ico` has 16/32/48; `icon.svg` and the 180×180 opaque Apple icon exist.
+- [ ] `favicon.ico` has 16/32/48; `icon.svg` and the 180×180 Apple icon exist.
+- [ ] Baked corner radius stays within the platform mask; transparency appears only outside the plate; the mark is readable at 16×16.
 - [ ] Manifest lists 192, 512, and maskable 512; colors match the light background.
 - [ ] `theme-color` has light and dark entries.
 - [ ] OG image is 1200×630, light theme, 80 px padding, and the same image is used for Twitter.
