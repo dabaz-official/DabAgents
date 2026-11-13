@@ -8,12 +8,13 @@
 - **Name:**
 - **Purpose:** (one sentence)
 - **Repo:**
+- **Canonical URL:**
 - **Primary locale:** (e.g. `en`, `zh-CN`; mixed pages are not allowed unless intentional)
 - **Owner:**
 
 ## Required reading (in order)
 
-1. **DabAgent-Guideline** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-agent-operating.md`, which routes to the other rules
+1. **DabAgents** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-operating.md`, which routes to the other rules
 2. **DabDesign** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `core.md` and `GOVERNANCE.md`
 3. **DabFonts** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `TYPESETTING.md`
 
@@ -23,6 +24,7 @@
 - **Language:** TypeScript, `strict: true`
 - **Styling:** Tailwind CSS v4 + DabDesign tokens, following `DabDesign/GUIDELINE.md`
 - **Fonts:** DabFonts, following `DabFonts/GUIDELINE.md`
+- **Voice:** default from rule 07; project override: (optional)
 - **Package manager:** pnpm (existing projects: state the actual one)
 - **Node:** current Active LTS, pinned in `.nvmrc`
 - **Deploy:** Vercel
@@ -46,10 +48,17 @@ pnpm check        # full gate: format + lint + typecheck + test + build
 - [ ] Responsive at every width in `DabDesign/GUIDELINE.md` (currently 375, 390, 640, 768, 1024, 1280, 1536)
 - [ ] Keyboard + focus + contrast checked
 - [ ] Surface identity follows rule 10 (title, icons, OG, manifest)
+- [ ] Copy follows rule 07 when text changed
+- [ ] Tests cover new behavior and regressions, or the no-test exception is recorded
 - [ ] No console or server errors
 - [ ] Loading, empty, and error states handled
 - [ ] Docs updated (`README`, `AGENTS.md`, ADR, changelog) if behavior changed
 - [ ] No secrets, debug logs, or commented-out code
+
+## Surface assets
+
+- **Icon masters:** plate `<path>` (iOS + maskable); mark `<path>` (favicon, `icon.svg`, 192, 512). Omit the mark if the plate covers every surface.
+- **Home OG image:** custom `<path>`; if absent, generate from the pinned guideline's `templates/og-image.md`.
 
 ## Project-specific rules
 

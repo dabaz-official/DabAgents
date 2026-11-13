@@ -25,7 +25,7 @@ Every project exposes the same script names, regardless of stack:
 - The canonical gate is `pnpm check`. For npm projects, replace `pnpm` with `npm run` inside the `check` script.
 - Prettier is the formatter; ESLint covers correctness. Do not add stylistic ESLint rules that duplicate Prettier.
 
-Per stack, the underlying commands are:
+Per stack:
 
 | Stack | Typecheck | Test | Build |
 |---|---|---|---|
@@ -35,12 +35,9 @@ Per stack, the underlying commands are:
 
 ## 2. Required before every commit
 
-- `format:check`
-- `lint`
-- `typecheck`
-- `test`
-- `build`
+- `format:check`, `lint`, `typecheck`, `test`, `build`
 - no console errors in the development server
+- security: no secrets in the diff, every env var documented, no high or critical advisories (rule 05)
 
 For documentation-only changes, `build` may be skipped with a stated reason. Everything else still applies.
 
@@ -51,19 +48,15 @@ For documentation-only changes, `build` may be skipped with a stated reason. Eve
 - CI runs the full `check` script.
 - A Vercel build is not a substitute for CI checks.
 - `main` stays green. Fix a red `main` before starting new work.
-
-Minimal workflow: copy [`templates/ci.yml`](../templates/ci.yml) to `.github/workflows/ci.yml`.
+- Workflow: copy [`templates/ci.yml`](../templates/ci.yml) to `.github/workflows/ci.yml`.
 
 ## 4. Visual and UX gate
 
-- Check every width in `DabDesign/GUIDELINE.md` §7 (currently 375, 390, 640, 768, 1024, 1280, 1536). Also confirm no horizontal scroll at 320.
-- Use semantic token roles only; no primitive ramps, raw values, local scales, or component forks.
-- Surface identity follows rule 10: one title pattern, one description source, the required icon set, a 1200×630 OG image, and theme colors from tokens.
+- Follow rule 08 for required widths, breakpoints, zoom, and keyboard checks.
 - Check light and dark mode when the project supports both.
-- Walk the page with the keyboard: tab order, visible focus, no traps.
-- Zoom to 200% and confirm the layout remains usable.
 - Verify loading, empty, error, and disabled states.
 - No layout shift, clipped text, or overlapping elements.
+- Surface identity follows rule 10 when title, icons, OG, or manifest changed.
 - UI changes include screenshots or a preview link in the PR.
 
 ## 5. Accessibility gate
@@ -95,22 +88,24 @@ For public pages, run Lighthouse mobile and record the result:
 
 Project-specific exceptions go in `AGENTS.md` with a reason and review date. Do not quietly lower a threshold.
 
-## 7. Security gate
+## 7. Testing strategy
 
-- No secrets in the diff.
-- Every environment variable is documented in `.env.example`.
-- No high or critical dependency advisories.
-- Security headers are present in production (rule 05).
-- Auth and authorization are enforced server-side.
+- Test behavior and failure modes, not implementation details.
+- Unit: pure logic, data transforms, validation, and edge cases, with Vitest.
+- Component: user-visible behavior with React Testing Library; avoid snapshot-only tests.
+- E2E: critical flows only (auth, checkout, publish, save), with Playwright.
+- Every bug fix gets a regression test when practical.
+- Coverage is not a target. Do not test third-party libraries or trivial markup.
 
 ## 8. Definition of Done
 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
-- [ ] Responsive at every width in `DabDesign/GUIDELINE.md` and state checks pass
-- [ ] Surface identity checked (rule 10)
+- [ ] Responsive checks (rule 08) and state checks (§4) pass
+- [ ] Surface identity checked when changed (rule 10)
 - [ ] Accessibility gate passes
 - [ ] Performance gate passes or has a recorded exception
+- [ ] Tests cover new behavior and regressions, or the no-test exception is recorded
 - [ ] No console or server errors
 - [ ] Docs updated if behavior, commands, or architecture changed
 - [ ] Preview deploy checked for UI changes

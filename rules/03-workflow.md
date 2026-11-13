@@ -1,4 +1,4 @@
-# 03 — Git and Delivery Workflow
+# 03 — Workflow
 
 **Applies to:** every repository. `main` is always deployable.
 
@@ -11,28 +11,15 @@
 
 ## 2. Commits
 
-Use Conventional Commits:
-
-```
-type(scope): imperative summary
-
-Why this change is needed, not what the diff shows.
-```
+Use Conventional Commits: `type(scope): imperative summary`.
 
 - Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `build`, `ci`, `chore`, `revert`.
 - Summary: imperative, lowercase, no trailing period, ≤72 characters.
 - One logical change per commit. Never mix formatting with behavior.
 - Body explains the reason and any tradeoff. Reference issues when they exist.
-- Do not commit secrets, `.env` files, build output, or unrelated files.
+- Commit only files changed for the task.
 
-Examples:
-
-```
-feat(resume): add print stylesheet
-fix(nav): restore focus after dialog close
-chore(deps): upgrade next to 16.1.0
-docs(agents): pin design system version
-```
+Examples: `feat(resume): add print stylesheet`, `fix(nav): restore focus after dialog close`.
 
 ## 3. Pull requests
 
@@ -54,13 +41,13 @@ A PR description contains:
 
 Keep PRs under ~400 changed lines when practical. Self-review the diff before asking for review. Squash merge and delete the branch.
 
-## 4. Review checklist
+## 4. Review and merge
 
-- [ ] Matches the acceptance criteria; no unrelated changes
-- [ ] Gates pass (rule 04)
-- [ ] UI changes include screenshots or a preview link
-- [ ] Docs updated if behavior, commands, or architecture changed
-- [ ] Risks and rollback notes are in the PR
+- The PR must satisfy the Definition of Done in [rule 04 §8](04-quality.md). Do not merge with a failing gate.
+- The diff stays within the stated scope; unrelated changes are split out.
+- UI changes include screenshots or a preview link.
+- Risks and rollback notes are in the PR.
+- If a gate is waived, record the exception in the project's `AGENTS.md` (rule 04 §9).
 
 ## 5. Releases and versioning
 
@@ -68,7 +55,7 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 - Tag production releases: `vX.Y.Z`.
 - Maintain `CHANGELOG.md` for released projects; user-visible changes only.
 - Breaking changes require a major bump and a migration note.
-- Deploy production from `main` only.
+- Release from `main` only.
 - Do not move or reuse a published tag.
 
 ## 6. Hotfixes
@@ -82,7 +69,6 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 - force-push `main` or a shared branch
 - rewrite published history
 - commit `.env`, keys, tokens, or credentials
-- merge with failing gates
 - commit commented-out code or debug logging
 - commit `node_modules/`, `dist/`, `.next/`, or other build artifacts
 - amend or force-push a commit someone else has based work on

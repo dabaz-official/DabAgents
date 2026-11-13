@@ -1,6 +1,6 @@
 # 05 — Security and Privacy
 
-**Applies to:** every project, including internal tools. Assume every client-visible value is public.
+**Applies to:** every project, including internal tools. Assume every client-visible value is public. Pre-commit checks: rule 04 §2.
 
 ## 1. Secrets
 
@@ -47,17 +47,15 @@
 - Use an established provider or library (Auth.js, Clerk, Supabase Auth, or equivalent); record the choice in an ADR.
 - Sessions expire and refresh; provide a way to sign out all devices.
 - Enforce authorization on the server and at the data layer, not only by hiding UI.
-- Protect admin routes in middleware and again in the handler that reads or writes data.
+- Protect admin routes at the route boundary and again in the handler that reads or writes data.
 - Never trust a user ID, role, or price sent by the client.
 
 ## 5. Dependencies and supply chain
 
-- Commit the lockfile; install with a frozen lockfile in CI.
-- Review new packages before adding: maintenance, downloads, transitive dependencies, license, install scripts.
+- Dependency policy and lockfile rules: rule 02 §2.
 - Do not run unknown `postinstall` scripts. Prefer packages that do not need them.
 - Run an audit before releases; no high or critical advisories in production dependencies.
 - Enable Dependabot or equivalent and review its PRs like any other change.
-- Remove unused packages; every dependency is attack surface.
 
 ## 6. Privacy
 

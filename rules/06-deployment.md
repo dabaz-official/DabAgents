@@ -24,11 +24,9 @@ Preview is the staging environment. Add a separate staging project only when pre
 ## 3. Environment variables
 
 - Set variables in Vercel with the correct scope: Production, Preview, Development.
-- Never commit values. `.env.example` is the documentation.
 - Local development: `vercel env pull .env.local`.
-- Preview values must not point at production data stores.
 - Changing a variable requires a redeploy; mention it in the PR.
-- Validate required variables at build or startup; fail loudly instead of shipping a broken page.
+- Values, validation, and preview isolation: rule 05 §1–§2.
 
 ## 4. Domains and DNS
 
@@ -37,25 +35,24 @@ Preview is the staging environment. Add a separate staging project only when pre
 - DNS, domain, and certificate changes are user-approved actions. Do not change them unasked.
 - Record the canonical URL in `AGENTS.md`.
 
-## 5. Deploy flow
+## 5. Deploy and rollback
 
-1. Merge to `main` after gates pass.
+1. Merge to `main` after the gates pass (rules 03–04).
 2. Vercel builds and deploys production.
-3. Verify the deployment (checklist below).
-4. Tag the release if the project is versioned.
+3. Verify the deployment with the checklist below.
+4. Tag the release if the project is versioned (rule 03).
 
 - Never run `vercel --prod` from a local machine unless the user explicitly asks.
 - Never edit build output or patch production manually.
 - Roll back with Vercel's instant rollback to a known-good deployment.
 - Database migrations must be backward compatible for at least one release so a rollback remains safe.
 
-## 6. Caching and headers
+## 6. Caching
 
 - Hashed static assets: `Cache-Control: public, max-age=31536000, immutable`.
 - HTML: short-lived cache or revalidation; do not cache authenticated responses.
 - Do not cache responses that vary by cookie, user, or authorization.
-- Security headers are configured in the framework config (for example `next.config.ts`) or `vercel.json` (rule 05).
-- Configure redirects and rewrites in the framework config, not ad hoc in components.
+- Security headers: rule 05 §3. Configure redirects and rewrites in the framework config, not ad hoc in components.
 
 ## 7. Observability
 
@@ -71,8 +68,8 @@ Preview is the staging environment. Add a separate staging project only when pre
 - [ ] Key routes return 200; unknown routes return a real 404
 - [ ] No console or server errors
 - [ ] Environment-dependent features work (auth, forms, payments)
-- [ ] Metadata and OG image are correct
-- [ ] Lighthouse gate passes or has a recorded exception
+- [ ] Metadata and OG image are correct (rule 10)
+- [ ] Lighthouse gate passes or has a recorded exception (rule 04 §6)
 - [ ] Rollback target is known
 
 ## 9. Local production check

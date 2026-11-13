@@ -11,7 +11,7 @@ This repository is a **guidelines repository**, not an application. It has no bu
 - Update the index in `README.md` when adding or renaming a document.
 - Keep numbering stable. Do not renumber existing documents for a new topic; append with the next free number.
 - Keep one canonical home per rule. Link instead of restating. `templates/AGENTS.md` may restate commands and the Definition of Done because it is the copy projects read.
-- Keep the read order at one file. A new rule needs a trigger row in `rules/01-agent-operating.md`.
+- Keep the read order at one file. A new rule needs a trigger row in `rules/01-operating.md`.
 - Remove a rule that is repeatedly waived rather than adding exceptions around it.
 
 ## Structure

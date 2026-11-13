@@ -1,6 +1,6 @@
-# 07 — Content, SEO, and Internationalization
+# 07 — Content, SEO, and i18n
 
-**Applies to:** all user-facing pages. `DabDesign/GUIDELINE.md` and `DabFonts/GUIDELINE.md` take precedence for tone and typesetting.
+**Applies to:** all user-facing pages. This rule owns voice and copy; `DabFonts/GUIDELINE.md` takes precedence for typesetting. Visual design comes from `DabDesign/GUIDELINE.md` and does not define tone.
 
 ## 1. Language policy
 
@@ -14,7 +14,7 @@
 
 ## 2. Voice and microcopy
 
-- Follow `DabDesign/GUIDELINE.md` and, for the personal series, `DabDesign.md` for voice: plain, direct, calm, editorial.
+- Default voice: plain, direct, calm, editorial. A project may override it in its `AGENTS.md`; do not inherit tone from the visual design system.
 - Sentence case for headings, labels, and buttons. No exclamation marks. No marketing filler.
 - Buttons name the action: "Save changes", not "Submit" or "OK".
 - Errors state what happened and what to do next. No blame, no bare error codes.
