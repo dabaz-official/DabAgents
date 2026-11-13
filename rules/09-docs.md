@@ -12,26 +12,9 @@
 | `CHANGELOG.md` | released projects | User-visible changes per version |
 | `docs/adr/` | as decisions accumulate | Architecture decision records |
 
-## 2. README template
+## 2. README
 
-```md
-# Project name
-
-One sentence describing what this is and who it is for.
-
-## Stack
-
-## Quick start
-
-## Scripts
-
-## Environment
-
-## Deployment
-
-## Structure (optional)
-```
-
+- Sections: name and one-line purpose, stack, quick start, scripts, environment, deployment, structure (optional).
 - Put the fastest path to a running app near the top.
 - Keep commands copy-pasteable and current.
 - Link to `AGENTS.md` and `DabDesign/GUIDELINE.md` instead of duplicating them.
@@ -39,9 +22,9 @@ One sentence describing what this is and who it is for.
 ## 3. AGENTS.md
 
 - Keep it to one page.
-- Pin the versions of DabAgent-Guideline, DabDesign, and DabFonts (tag or commit SHA), and point to each dependency's `GUIDELINE.md` as its entry point.
-- List the canonical commands and the Definition of Done.
-- State the primary locale, the deploy target, and any project-specific rules.
+- Pin DabAgent-Guideline, DabDesign, and DabFonts by tag or commit SHA; point to each dependency's `GUIDELINE.md` as its entry point.
+- List canonical commands and the Definition of Done.
+- State the primary locale, deploy target, and project-specific rules.
 - Record exceptions with a reason and review date.
 - Update it when the stack, commands, or scope changes.
 
@@ -56,21 +39,7 @@ Write an ADR when a decision:
 - changes deployment, hosting, or infrastructure
 - introduces a cross-cutting pattern other work must follow
 
-Format: `docs/adr/NNNN-short-title.md`
-
-```md
-# NNNN — Title
-
-- Status: proposed | accepted | superseded by NNNN
-- Date: YYYY-MM-DD
-
-## Context
-
-## Decision
-
-## Consequences
-```
-
+- Format: `docs/adr/NNNN-short-title.md` with title, status, date, context, decision, and consequences.
 - ADRs are immutable. Supersede with a new record instead of editing history.
 - Link the ADR from the PR that implements it.
 - Design decisions belong in `DabDesign/GUIDELINE.md` and its governance, not in project ADRs.

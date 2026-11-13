@@ -43,7 +43,7 @@ Before UI work, also follow `DabDesign/GUIDELINE.md`. Before typography, punctua
 | 06 | [Deployment and Operations](rules/06-deployment.md) | Vercel environments, env vars, domains, rollback, observability |
 | 07 | [Content, SEO, and i18n](rules/07-content.md) | Language policy, voice, metadata, structured data, localization |
 | 08 | [Compatibility](rules/08-compatibility.md) | Browser matrix, responsive rules, input, progressive enhancement |
-| 09 | [Documentation and Memory](rules/09-docs-and-memory.md) | README, AGENTS.md, ADRs, changelog, comments |
+| 09 | [Documentation and Memory](rules/09-docs.md) | README, AGENTS.md, ADRs, changelog, comments |
 | 10 | [Surface Identity](rules/10-surface-identity.md) | Title format, description reuse, icons, Open Graph, manifest, browser colors |
 
 ## Adopting in a project
