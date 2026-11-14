@@ -69,8 +69,7 @@ Copy these into a project. They are assets, not rules to read on every task.
 ## Versioning and changes
 
 - Semantic versioning; tag releases `vX.Y.Z`.
-- Version numbers are per repository. Do not align this one with DabDesign or DabFonts; a project's pins record the combination it uses.
-- Each repository defines what a breaking change means for itself in its `AGENTS.md`.
+- Version numbers are per repository, and each repository defines what a breaking change means in its `AGENTS.md` (rule 03 §5).
 - Breaking rule changes bump the major version. Projects pin and upgrade deliberately.
 - `CHANGELOG.md` records user-visible changes; read it before upgrading a pin.
 - Propose changes via PR and explain the failure the rule prevents.

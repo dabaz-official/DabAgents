@@ -2,6 +2,12 @@
 
 All notable changes to this repository are recorded here. The format follows Keep a Changelog; versions follow semantic versioning.
 
+## Unreleased
+
+### Added
+
+- Rule 03 §5: version numbers are per repository, and each repository defines what a breaking change means in its `AGENTS.md`.
+
 ## 1.0.0 — 2026-11-14
 
 The guideline set was rewritten around one always-read rule, trigger-based loading, and one canonical home per rule.

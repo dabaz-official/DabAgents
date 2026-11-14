@@ -52,6 +52,8 @@ Keep PRs under ~400 changed lines when practical. Self-review the diff before as
 ## 5. Releases and versioning
 
 - Use semantic versioning: `MAJOR.MINOR.PATCH`.
+- Version numbers are per repository. Never align them across repositories, and never bump one because a sibling was released; a project's pins record the combination it uses.
+- Define what a breaking change means for the repository in its `AGENTS.md`. That file is the canonical home of the definition.
 - Tag production releases: `vX.Y.Z`.
 - Maintain `CHANGELOG.md` for released projects; user-visible changes only.
 - Breaking changes require a major bump and a migration note.
