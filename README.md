@@ -62,7 +62,7 @@ Copy these into a project. They are assets, not rules to read on every task.
 
 1. Copy `templates/AGENTS.md` to the project root; fill in identity, stack, commands, locale, and canonical URL.
 2. Fill in `Surface assets`: plate and mark master paths (rule 10 §4), and whether the home OG image is custom or generated.
-3. Pin this repository, DabDesign, and DabFonts by tag or commit SHA. Until `v1.0.0` is tagged, pin a commit SHA.
+3. Pin this repository, DabDesign, and DabFonts by tag; all three carry `v1.0.0`.
 4. Copy `templates/README.md` and `templates/ci.yml`; add the `check` script (rule 04).
 5. Use `templates/adr.md` for the first decision that needs a record.
 
