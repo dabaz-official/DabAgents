@@ -4,5 +4,8 @@
 .env.local
 .env.*.local
 
+# Local agent tool state
+.zcode/
+
 # Scratch test project, not part of the guidelines
 test/
