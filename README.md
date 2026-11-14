@@ -78,3 +78,9 @@ Copy these into a project. They are assets, not rules to read on every task.
 ## Repository language
 
 Documentation and code are written in English. Conversation with the user follows the user's language.
+
+## License
+
+Released under the MIT license, © 2026 DabAZ; see [`LICENSE`](LICENSE).
+The rules, the templates, and this documentation are covered. Copy
+`templates/` into a project freely, with or without attribution.
