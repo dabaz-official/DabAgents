@@ -62,13 +62,15 @@ Copy these into a project. They are assets, not rules to read on every task.
 
 1. Copy `templates/AGENTS.md` to the project root; fill in identity, stack, commands, locale, and canonical URL.
 2. Fill in `Surface assets`: plate and mark master paths (rule 10 §4), and whether the home OG image is custom or generated.
-3. Pin this repository, DabDesign, and DabFonts by tag; all three carry `v1.0.0`.
+3. Pin this repository, DabDesign, and DabFonts by tag. Each repository carries its own version; record the three you adopted.
 4. Copy `templates/README.md` and `templates/ci.yml`; add the `check` script (rule 04).
 5. Use `templates/adr.md` for the first decision that needs a record.
 
 ## Versioning and changes
 
 - Semantic versioning; tag releases `vX.Y.Z`.
+- Version numbers are per repository. Do not align this one with DabDesign or DabFonts; a project's pins record the combination it uses.
+- Each repository defines what a breaking change means for itself in its `AGENTS.md`.
 - Breaking rule changes bump the major version. Projects pin and upgrade deliberately.
 - `CHANGELOG.md` records user-visible changes; read it before upgrading a pin.
 - Propose changes via PR and explain the failure the rule prevents.
