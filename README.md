@@ -1,6 +1,6 @@
 # DabAgents
 
-**Version:** 1.0.1 · **Updated:** 2026-11-15
+**Version:** 1.0.2 · **Updated:** 2026-11-15
 
 Rules and conventions agents must follow when building and shipping DabAZ web projects.
 

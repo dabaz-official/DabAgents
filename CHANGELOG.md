@@ -2,7 +2,7 @@
 
 All notable changes to this repository are recorded here. The format follows Keep a Changelog; versions follow semantic versioning.
 
-## Unreleased
+## 1.0.2 — 2026-11-15
 
 ### Fixed
 
