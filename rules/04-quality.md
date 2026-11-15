@@ -48,7 +48,7 @@ For documentation-only changes, `build` may be skipped with a stated reason. Eve
 - CI runs the full `check` script.
 - A Vercel build is not a substitute for CI checks.
 - `main` stays green. Fix a red `main` before starting new work.
-- Workflow: call the shared `web-ci.yml` from `dabaz-official/.github`, following [`templates/ci.yml`](../templates/ci.yml). The workflow installs and runs `pnpm check`; it does not restate the gate, so extending a project's gate never means editing the workflow.
+- Workflow: pnpm projects call the shared `web-ci.yml` from `dabaz-official/.github`, following [`templates/ci.yml`](../templates/ci.yml). npm projects keep a local workflow that runs `npm ci` and `npm run check`, because the shared workflow installs with pnpm only. The shared workflow installs and runs the project's own `check` script; it does not restate the gate, so extending a project's gate never means editing the workflow.
 
 ## 4. Visual and UX gate
 

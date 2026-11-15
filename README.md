@@ -55,7 +55,7 @@ Copy these into a project. They are assets, not rules to read on every task.
 | [`AGENTS.md`](templates/AGENTS.md) | project root | Project contract: pins, stack, commands, DoD, surface assets, exceptions |
 | [`README.md`](templates/README.md) | project root | README skeleton: quick start, scripts, environment, deployment |
 | [`adr.md`](templates/adr.md) | `docs/adr/NNNN-short-title.md` | ADR format |
-| [`ci.yml`](templates/ci.yml) | `.github/workflows/ci.yml` | CI that runs `pnpm check` |
+| [`ci.yml`](templates/ci.yml) | `.github/workflows/ci.yml` | CI caller for pnpm projects; runs the project's `check` script |
 | [`og-image.md`](templates/og-image.md) | reference for the OG generator | Layout for generated 1200×630 images |
 
 ## Adopting in a project
