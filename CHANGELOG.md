@@ -2,6 +2,16 @@
 
 All notable changes to this repository are recorded here. The format follows Keep a Changelog; versions follow semantic versioning.
 
+## Unreleased
+
+### Fixed
+
+- Rule 04 §3 and `templates/ci.yml` state the npm path and the Node version
+  input correctly: the shared workflow installs with pnpm only and defaults to
+  Node 24, so npm projects keep a local workflow and other Node LTS versions are
+  passed explicitly.
+- The 1.0.1 changelog had two `### Changed` headings; they are merged.
+
 ## 1.0.1 — 2026-11-15
 
 ### Added
@@ -10,6 +20,8 @@ All notable changes to this repository are recorded here. The format follows Kee
   these rules can now reuse them and point at a license.
 - Rule 03 §5: version numbers are per repository, and each repository defines
   what a breaking change means in its `AGENTS.md`.
+- `AGENTS.md` Versioning: what major, minor, and patch mean for this repository
+  (rule 03 §5).
 
 ### Changed
 
@@ -18,12 +30,6 @@ All notable changes to this repository are recorded here. The format follows Kee
   workflow definition and the gate definition are no longer two documents.
 - Rule 04 §3 points at that shared workflow and names `pnpm check` as the only
   thing CI restates.
-- README adoption: pin by tag, now that releases exist.
-- `AGENTS.md` Versioning: what major, minor, and patch mean for this repository
-  (rule 03 §5).
-
-### Changed
-
 - Adoption pins by tag, with a commit SHA only where a repository has no tag.
 - Rule 09 §3 names the entry point per dependency: `rules/01-operating.md` for
   DabAgents, `GUIDELINE.md` for DabDesign and DabFonts.
