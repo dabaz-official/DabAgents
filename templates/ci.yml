@@ -1,19 +1,19 @@
 # Copy to .github/workflows/ci.yml.
-# npm projects: drop pnpm/action-setup, use setup-node's npm cache, and run `npm ci` / `npm run check`.
+# npm projects: keep the trigger and concurrency, drop pnpm/action-setup, use
+# setup-node's npm cache, and let `check` run `npm run` scripts instead of pnpm.
+#
+# The gate is the project's own `pnpm check`; the shared workflow only installs
+# and runs it, so nothing here restates what the gate is.
 name: ci
 on:
   pull_request:
   push:
     branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm check
+  ci:
+    uses: dabaz-official/.github/.github/workflows/web-ci.yml@main

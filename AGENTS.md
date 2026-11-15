@@ -14,13 +14,27 @@ This repository is a **guidelines repository**, not an application. It has no bu
 - Keep the read order at one file. A new rule needs a trigger row in `rules/01-operating.md`.
 - Remove a rule that is repeatedly waived rather than adding exceptions around it.
 
+## Versioning
+
+Versions are this repository's own; they do not track DabDesign or DabFonts. Projects pin all three independently.
+
+- **Major** — a rule is removed, or changes meaning, so that work that satisfied the previous version no longer satisfies this one.
+- **Minor** — a rule, document, or template section is added.
+- **Patch** — wording, links, examples, or typos that leave every requirement unchanged.
+
+Tag releases `vX.Y.Z` and record user-visible changes in `CHANGELOG.md`.
+
 ## Structure
 
 ```
 README.md                  index and source-of-truth contract
 AGENTS.md                  this file — rules for editing the guidelines
+CHANGELOG.md               released changes
+LICENSE                    MIT license
 rules/01..10               the guidelines themselves
 templates/AGENTS.md        per-project contract template
+templates/README.md        project README skeleton
+templates/adr.md           ADR format
 templates/ci.yml           CI workflow to copy
 templates/og-image.md      Open Graph image layout
 ```

@@ -1,6 +1,6 @@
 # DabAgents
 
-**Version:** 1.0.0 · **Updated:** 2026-11-14
+**Version:** 1.0.1 · **Updated:** 2026-11-15
 
 Rules and conventions agents must follow when building and shipping DabAZ web projects.
 
@@ -10,8 +10,8 @@ This repository governs how agent-assisted work is planned, written, verified, a
 
 | Source of truth | Entry point | Owns |
 |---|---|---|
-| [DabDesign](https://github.com/dabaz-official/DabDesign) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabDesign/blob/main/GUIDELINE.md) | Design tokens, components, contrast, motion |
-| [DabFonts](https://github.com/dabaz-official/DabFonts) | [`GUIDELINE.md`](https://github.com/dabaz-official/DabFonts/blob/main/GUIDELINE.md) | Font files, typesetting, loading, licensing |
+| [DabDesign](https://github.com/dabaz-official/DabDesign) | `GUIDELINE.md` | Design tokens, components, contrast, motion |
+| [DabFonts](https://github.com/dabaz-official/DabFonts) | `GUIDELINE.md` | Font files, typesetting, loading, licensing |
 | This repository | `rules/` and `templates/` | Engineering, workflow, quality gates, security, deployment, content, surface identity, compatibility, documentation |
 
 Start each dependency at its `GUIDELINE.md`. It defines the required read order and routes to the normative files: DabDesign uses `core.md` and `GOVERNANCE.md`; DabFonts uses `TYPESETTING.md`.
@@ -62,7 +62,7 @@ Copy these into a project. They are assets, not rules to read on every task.
 
 1. Copy `templates/AGENTS.md` to the project root; fill in identity, stack, commands, locale, and canonical URL.
 2. Fill in `Surface assets`: plate and mark master paths (rule 10 §4), and whether the home OG image is custom or generated.
-3. Pin this repository, DabDesign, and DabFonts by tag. Each repository carries its own version; record the three you adopted.
+3. Pin this repository, DabDesign, and DabFonts by tag (or by commit SHA where a repository has no tag). Each repository carries its own version; record the three you adopted.
 4. Copy `templates/README.md` and `templates/ci.yml`; add the `check` script (rule 04).
 5. Use `templates/adr.md` for the first decision that needs a record.
 
@@ -84,4 +84,5 @@ Documentation and code are written in English. Conversation with the user follow
 
 Released under the MIT license, © 2026 DabAZ; see [`LICENSE`](LICENSE).
 The rules, the templates, and this documentation are covered. Copy
-`templates/` into a project freely, with or without attribution.
+`templates/` into a project freely; keep the copyright and permission notice
+with substantial copies, as the license requires.

@@ -15,8 +15,8 @@
 ## Required reading (in order)
 
 1. **DabAgents** @ `<tag or commit SHA>` — `<url>`; start at `rules/01-operating.md`, which routes to the other rules
-2. **DabDesign** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `core.md` and `GOVERNANCE.md`
-3. **DabFonts** @ `<commit SHA>` — start at `GUIDELINE.md`; it defines the read order and routes to `TYPESETTING.md`
+2. **DabDesign** @ `<tag or commit SHA>` — `<url>`; start at `GUIDELINE.md`; it defines the read order and routes to `core.md` and `GOVERNANCE.md`
+3. **DabFonts** @ `<tag or commit SHA>` — `<url>`; start at `GUIDELINE.md`; it defines the read order and routes to `TYPESETTING.md`
 
 ## Stack
 
@@ -45,14 +45,16 @@ pnpm check        # full gate: format + lint + typecheck + test + build
 
 - [ ] Acceptance criteria met
 - [ ] `pnpm check` passes
-- [ ] Responsive at every width in `DabDesign/GUIDELINE.md` (currently 375, 390, 640, 768, 1024, 1280, 1536)
-- [ ] Keyboard + focus + contrast checked
-- [ ] Surface identity follows rule 10 (title, icons, OG, manifest)
+- [ ] Responsive checks pass: every width in `DabDesign/GUIDELINE.md` (currently 375, 390, 640, 768, 1024, 1280, 1536) plus 320 px for overflow
+- [ ] Accessibility gate passes (rule 04 §5)
+- [ ] Performance gate passes or has a recorded exception (rule 04 §6)
+- [ ] Loading, empty, error, and disabled states verified
+- [ ] Surface identity follows rule 10 when title, icons, OG, or manifest changed
 - [ ] Copy follows rule 07 when text changed
 - [ ] Tests cover new behavior and regressions, or the no-test exception is recorded
 - [ ] No console or server errors
-- [ ] Loading, empty, and error states handled
 - [ ] Docs updated (`README`, `AGENTS.md`, ADR, changelog) if behavior changed
+- [ ] Preview deploy checked for UI changes
 - [ ] No secrets, debug logs, or commented-out code
 
 ## Surface assets

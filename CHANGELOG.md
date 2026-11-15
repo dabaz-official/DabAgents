@@ -2,13 +2,43 @@
 
 All notable changes to this repository are recorded here. The format follows Keep a Changelog; versions follow semantic versioning.
 
-## Unreleased
+## 1.0.1 — 2026-11-15
 
 ### Added
 
-- Rule 03 §5: version numbers are per repository, and each repository defines what a breaking change means in its `AGENTS.md`.
+- `LICENSE`: the MIT license, and a README license section. A project that pins
+  these rules can now reuse them and point at a license.
+- Rule 03 §5: version numbers are per repository, and each repository defines
+  what a breaking change means in its `AGENTS.md`.
 
-## 1.0.0 — 2026-11-14
+### Changed
+
+- `templates/ci.yml` calls the shared `web-ci.yml` from `dabaz-official/.github`
+  instead of copying its steps. The gate is the project's `pnpm check`, so the
+  workflow definition and the gate definition are no longer two documents.
+- Rule 04 §3 points at that shared workflow and names `pnpm check` as the only
+  thing CI restates.
+- README adoption: pin by tag, now that releases exist.
+- `AGENTS.md` Versioning: what major, minor, and patch mean for this repository
+  (rule 03 §5).
+
+### Changed
+
+- Adoption pins by tag, with a commit SHA only where a repository has no tag.
+- Rule 09 §3 names the entry point per dependency: `rules/01-operating.md` for
+  DabAgents, `GUIDELINE.md` for DabDesign and DabFonts.
+- `templates/AGENTS.md` accepts a tag or a commit SHA for all three pins, adds
+  320 px to the responsive check, and restates the full Definition of Done from
+  rule 04 §8, including the accessibility, performance, and preview-deploy gates.
+
+### Fixed
+
+- Rule 02 §6 points at the archived component drafts under `archive/`; DabDesign
+  no longer has a live `components/` directory.
+- README no longer says templates may be copied without attribution, which the
+  MIT license does not allow for substantial copies.
+
+## 1.0.0 — 2026-11-15
 
 The guideline set was rewritten around one always-read rule, trigger-based loading, and one canonical home per rule.
 

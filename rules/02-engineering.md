@@ -107,7 +107,7 @@ src/styles/               tokens and global CSS
 - Props are typed and minimal. No prop drilling beyond two levels; use composition or context instead.
 - Handle loading, empty, error, and disabled states explicitly.
 - Accessibility is part of the component: labels, roles, focus management, keyboard behavior.
-- Follow `DabDesign/GUIDELINE.md` §9 for component status. The v1 pilot set is Button, Text input, and Card; do not treat `components/` or previews as the current contract.
+- Follow `DabDesign/GUIDELINE.md` §9 for component status. The v1 pilot set is Button, Text input, and Card; do not treat the archived drafts under `archive/` or their previews as the current contract.
 - Prefer server components; move interactivity into small client leaves.
 
 ## 7. Data, state, and APIs
